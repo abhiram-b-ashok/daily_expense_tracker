@@ -50,6 +50,7 @@
                 android:textSize="18sp"
                 android:layout_marginStart="15dp"
                 tools:text="Title" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +58,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/cost"
-                app:layout_constraintBottom_toTopOf="@+id/date"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
@@ -65,25 +66,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
-                app:layout_constraintBottom_toTopOf="@+id/date"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="45.00" />
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cost"
-                android:fontFamily="@font/inter_light"
-                android:textSize="15sp"
-                android:textColor="#969696"
-                tools:text="Today" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
