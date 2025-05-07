@@ -14,8 +14,9 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="120dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_menu"
         app:defaultNavHost="true"
         app:navGraph="@navigation/ui_nav_graph"/>
 
@@ -26,16 +27,13 @@
         android:layout_width="match_parent"
         android:elevation="4dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_nav_menu_bg"
+        android:background="@drawable/bottom_nav_menu_style"
         app:itemIconTint="#828282"
         app:labelVisibilityMode="unlabeled"
-        app:itemTextAppearanceActive="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
-
-
 
 
 

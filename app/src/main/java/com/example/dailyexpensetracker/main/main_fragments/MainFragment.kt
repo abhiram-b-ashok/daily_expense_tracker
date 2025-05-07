@@ -37,13 +37,15 @@ private lateinit var navController: NavController
                }
                R.id.addExpensesOrIncomeFragment -> {
                    navController.navigate(R.id.addExpensesOrIncomeFragment)
-                   true
+                   false
                }
 
                else -> {
                    false
                }
            }
-        }}}
+        }
+
+    }}
 
 

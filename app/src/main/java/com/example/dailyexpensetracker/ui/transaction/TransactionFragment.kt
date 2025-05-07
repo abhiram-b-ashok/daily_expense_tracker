@@ -45,14 +45,16 @@ class TransactionFragment : Fragment() {
     private fun selectType(type:Int) {
         binding.apply {
             if (type == 1) {
-                incomeButton.setCardBackgroundColor(R.drawable.gradient_background)
-                expenseButton.setCardBackgroundColor(resources.getColor(R.color.white))
+                incomeButtonLayout.setBackgroundResource(R.drawable.gradient_background)
+                expenseButtonLayout.setBackgroundResource(R.color.white)
                 incomeLabel.setTextColor(resources.getColor(R.color.white))
+                expenseLabel.setTextColor(resources.getColor(R.color.grey))
             }
             if (type == 2) {
-                expenseButton.setCardBackgroundColor(R.drawable.gradient_background)
-                incomeButton.setCardBackgroundColor(resources.getColor(R.color.white))
+                expenseButtonLayout.setBackgroundResource(R.drawable.gradient_background)
+                incomeButtonLayout.setBackgroundResource(R.color.white)
                 expenseLabel.setTextColor(resources.getColor(R.color.white))
+                incomeLabel.setTextColor(resources.getColor(R.color.grey))
             }
 
         }
