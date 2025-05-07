@@ -1,12 +1,16 @@
 package com.example.dailyexpensetracker.ui.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.dailyexpensetracker.databinding.CellItemsTransactionBinding
-import com.example.dailyexpensetracker.main.models.TransactionModel
+import com.example.dailyexpensetracker.models.transaction.TransactionModel
 
-class TransactionsAdapter(private val transactions: List<TransactionModel>):RecyclerView.Adapter<TransactionsAdapter.TransactionViewHolder>() {
+
+class TransactionsAdapter(private val transactions: List<TransactionModel>):
+    RecyclerView.Adapter<TransactionsAdapter.TransactionViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
         val binding =
@@ -15,17 +19,18 @@ class TransactionsAdapter(private val transactions: List<TransactionModel>):Recy
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(transactions[position])
     }
 
     override fun getItemCount(): Int {
         return transactions.size
     }
 
-    class TransactionViewHolder(val binding: CellItemsTransactionBinding) :
+    inner class TransactionViewHolder(private val binding: CellItemsTransactionBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(transaction: TransactionModel) {
-//            binding.image.setImageResource(transaction.image)
+            Glide.with(binding.image).load(transaction.image).into(binding.image)
+            Log.d("@@testData", ">>> $transaction ")
             binding.title.text = transaction.title
             binding.cost.text = transaction.cost
             binding.date.text = transaction.date

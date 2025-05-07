@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/home" android:title="" android:icon="@drawable/ic_menu"/>
-    <item android:id="@+id/addIExpense" android:title="" android:icon="@drawable/baseline_add_24"/>
+    <item android:id="@+id/homeFragment" android:title="" android:icon="@drawable/ic_menu"/>
+    <item android:id="@+id/addExpensesOrIncomeFragment" android:title="" android:icon="@drawable/baseline_add_24"/>
     <item android:id="@+id/invest" android:title="" android:icon="@drawable/ic_invest"/>
 </menu>

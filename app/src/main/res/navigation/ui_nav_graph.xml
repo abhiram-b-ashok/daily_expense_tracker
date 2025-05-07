@@ -9,5 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="com.example.dailyexpensetracker.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.dailyexpensetracker.ui.transaction.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" />
+    <fragment
+        android:id="@+id/addExpensesOrIncomeFragment"
+        android:name="com.example.dailyexpensetracker.ui.add_expenses_or_income.AddExpensesOrIncomeFragment"
+        android:label="fragment_add_expenses_or_income"
+        tools:layout="@layout/fragment_add_expenses_or_income" />
 </navigation>
