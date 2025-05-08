@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:top="40dp"  >
+    <item android:top="25dp"  >
         <shape android:shape="rectangle">
-            <size android:width="400dp" android:height="100dp"/>
+            <size android:width="350dp" android:height="80dp"/>
             <solid android:color="@color/white"/>
             <corners android:topLeftRadius="25dp" android:topRightRadius="25dp"/>
 
         </shape>
     </item>
-    <item android:gravity="top" android:left="185dp" android:right="185dp">
+    <item android:gravity="top" android:left="150dp" android:right="150dp">
         <shape android:shape="oval" >
 
-            <size android:width="80dp" android:height="80dp"/>
+            <size android:width="60dp" android:height="60dp"/>
 
             <gradient
                 android:startColor="#425FFD"
@@ -22,7 +22,7 @@
                 />
         </shape>
     </item>
-    <item android:drawable="@drawable/baseline_add_24" android:gravity="center" android:bottom="80dp" android:width="40dp" android:height="40dp">
+    <item android:drawable="@drawable/baseline_add_24" android:gravity="center_horizontal" android:top="15dp" android:bottom="30dp" android:width="30dp" android:height="30dp">
 
     </item>
 

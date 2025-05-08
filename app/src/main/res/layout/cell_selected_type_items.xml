@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginVertical="5dp">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="20dp"
         app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:paddingVertical="2dp"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/img_card"
@@ -25,7 +25,6 @@
                 android:layout_margin="13dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#34181C22"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -34,63 +33,47 @@
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:src="@drawable/ic_arrow_up" />
+                    tools:src="@drawable/ic_launcher_background" />
 
 
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:fontFamily="@font/inter_semibold"
-                android:textColor="#123456"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_card"
                 app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="#123456"
+                android:textSize="18sp"
+                android:layout_marginStart="15dp"
                 tools:text="Title" />
 
-
             <TextView
-                android:id="@+id/rupee_label"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:text="-₹"
                 android:fontFamily="@font/inter_regular"
-                android:text="@string/rupee"
-                android:textColor="#969696"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/cost"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/cost"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="25dp"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="#969696"
-                android:textSize="16sp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="16sp"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="45.00" />
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/inter_light"
-                android:textColor="#969696"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cost"
-                tools:text="Today" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

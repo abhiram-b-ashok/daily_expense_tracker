@@ -10,12 +10,15 @@ import androidx.navigation.fragment.findNavController
 import com.example.dailyexpensetracker.R
 import com.example.dailyexpensetracker.databinding.FragmentHomeBinding
 import com.example.dailyexpensetracker.models.transaction.TransactionModel
+import com.example.dailyexpensetracker.room_database.MyDatabase
 import com.example.dailyexpensetracker.ui.home.adapter.TransactionsAdapter
 
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var transactionAdapter: TransactionsAdapter
+    private var totalIncome :Int =0
+    private var totalExpense : Int =0
 
 
     override fun onCreateView(
@@ -28,20 +31,27 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val database = MyDatabase.getDatabase(requireContext())
+        val list = database.databaseDao().getAll()
+        val incomes = database.databaseDao().getIncomes()
+        val expenses = database.databaseDao().getExpenses()
+
+
+        incomes.forEach{
+            totalIncome += it.price
+        }
+        expenses.forEach{
+            totalExpense += it.price
+        }
+        binding.balance.text = (totalIncome - totalExpense).toString()
+        binding.income.text = totalIncome.toString()
+        binding.expenses.text = totalExpense.toString()
+
 
         binding.viewAllButton.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_transactionFragment) }
 
-        val list = arrayListOf(
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "Food", "200", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "wedd", "323", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "Food", "200", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "dvddv", "32", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "Food", "210", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "fcdc", "123", "23-09-22"),
-            TransactionModel("https://www.pngitem.com/pimgs/m/209-2095726_alarm-clock-square-shaped-objects-clipart-hd-png.png", "Food", "200", "23-09-22"),
 
-        )
 
 
         transactionAdapter = TransactionsAdapter(list)

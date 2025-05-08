@@ -1,5 +1,6 @@
 package com.example.dailyexpensetracker.ui.add_expenses_or_income.date_bottomsheet
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,7 +22,6 @@ class DateBottomSheetFragment : BottomSheetDialogFragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,9 +34,11 @@ class DateBottomSheetFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+
             val datePicker = datePicker
             datePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
                 val selectedDate = "$dayOfMonth/${monthOfYear + 1}/$year"
+
                 val bundle = Bundle()
                 bundle.putString(SELECTED_DATE, selectedDate)
                 parentFragmentManager.setFragmentResult(SELECTED_DATE_ID, bundle)

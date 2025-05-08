@@ -27,16 +27,16 @@ class TypeBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.income.setOnClickListener {
-            sendResult("Add Your Income")
+            sendResult(1)
         }
         binding.expense.setOnClickListener {
-            sendResult("Add Expenses")
+            sendResult(2)
         }
     }
 
-    private fun sendResult(type: String) {
+    private fun sendResult(type: Int) {
         val bundle = Bundle().apply {
-            putString(SELECTED_TYPE, type)
+            putInt(SELECTED_TYPE, type)
         }
         parentFragmentManager.setFragmentResult(SELECTED_SCHEME_ID, bundle)
         dismiss()

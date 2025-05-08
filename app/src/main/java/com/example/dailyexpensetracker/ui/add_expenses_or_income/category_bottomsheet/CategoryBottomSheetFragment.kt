@@ -40,6 +40,7 @@ class CategoryBottomSheetFragment : BottomSheetDialogFragment() {
            Category("Health"),
            Category("Entertainment"),
            Category("Recharge"),
+           Category("Salary"),
            Category("Others")
        )
         adapter = CategoryAdapter(list)

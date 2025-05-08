@@ -8,13 +8,11 @@ import androidx.room.PrimaryKey
 data class DatabaseModel(
 
     @PrimaryKey val id: Int? = null,
-    val type: Int,
-    val title: String,
-    val image: String,
-    val date: String,
-    val amount: String,
-    val category: String,
-    val note: String,
+    val type: Int?= null,
+    val date: String?= null,
+    val price: Int,
+    val category: String?= null,
+    val note: String?= null,
     var isSaved: Boolean = false
 )
 

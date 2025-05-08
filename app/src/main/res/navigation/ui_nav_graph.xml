@@ -18,10 +18,18 @@
         android:id="@+id/transactionFragment"
         android:name="com.example.dailyexpensetracker.ui.transaction.TransactionFragment"
         android:label="fragment_transaction"
-        tools:layout="@layout/fragment_transaction" />
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addExpensesOrIncomeFragment"
         android:name="com.example.dailyexpensetracker.ui.add_expenses_or_income.AddExpensesOrIncomeFragment"
         android:label="fragment_add_expenses_or_income"
-        tools:layout="@layout/fragment_add_expenses_or_income" />
+        tools:layout="@layout/fragment_add_expenses_or_income" >
+        <action
+            android:id="@+id/action_addExpensesOrIncomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

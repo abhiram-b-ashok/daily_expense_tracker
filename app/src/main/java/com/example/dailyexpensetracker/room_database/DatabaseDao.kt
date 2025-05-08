@@ -8,14 +8,16 @@ import androidx.room.Query
 @Dao
 interface DatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertExpense(expense: DatabaseModel)
+     fun insert(expense: DatabaseModel)
 
     @Query("SELECT * FROM database_table WHERE type = 1" )
-    suspend fun getIncomes(): List<DatabaseModel>
-
+     fun getIncomes(): List<DatabaseModel>
 
     @Query("SELECT * FROM database_table WHERE type = 2" )
-    suspend fun getExpenses(): List<DatabaseModel>
+     fun getExpenses(): List<DatabaseModel>
+
+     @Query("SELECT * FROM database_table")
+     fun getAll(): List<DatabaseModel>
 
 
 
