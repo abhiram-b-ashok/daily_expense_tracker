@@ -2,7 +2,6 @@ package com.example.dailyexpensetracker.ui.transaction
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,8 +13,6 @@ import com.example.dailyexpensetracker.room_database.MyDatabase
 import com.example.dailyexpensetracker.ui.transaction.adapter.expenses.ExpensesAdapter
 import com.example.dailyexpensetracker.ui.transaction.adapter.income.IncomeAdapter
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
