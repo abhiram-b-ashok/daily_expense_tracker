@@ -84,7 +84,7 @@ class TransactionFragment : Fragment() {
             }
 
             backButton.setOnClickListener {
-                findNavController().popBackStack()
+                findNavController().navigate(R.id.action_transactionFragment_to_homeFragment)
             }
             incomeButton.setOnClickListener {
                 selectedType = selectType(1)
